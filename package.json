@@ -1,8 +1,8 @@
 {
-  "name": "bitcore",
-  "version": "4.1.0",
-  "description": "A platform to build bitcoin and blockchain-based applications.",
-  "author": "BitPay <dev@bitpay.com>",
+  "name": "bitcore-crown",
+  "version": "0.0.0",
+  "description": "A platform to build Crown and blockchain-based applications.",
+  "author": "Crown Developers <info@crown.tech>",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha test/** --recursive",
@@ -13,6 +13,10 @@
     "bitcored": "./bin/bitcored"
   },
   "contributors": [
+    {
+      "name": "BitPay",
+      "email": "dev@bitpay.com"
+    },
     {
       "name": "Daniel Cousens",
       "email": "bitcoin@dcousens.com"
@@ -59,7 +63,7 @@
     }
   ],
   "keywords": [
-    "bitcoin",
+    "crown",
     "transaction",
     "address",
     "p2p",
@@ -76,7 +80,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcore.git"
+    "url": "https://github.com/Crowndev/bitcore-crown.git"
   },
   "browser": {
     "request": "browser-request"

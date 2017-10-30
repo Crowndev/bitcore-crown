@@ -1,5 +1,7 @@
-Bitcore
-=======
+Bitcore-Crown
+=============
+
+# This package is under development. Please don't install.
 
 [![NPM Package](https://img.shields.io/npm/v/bitcore.svg?style=flat-square)](https://www.npmjs.org/package/bitcore)
 [![Build Status](https://img.shields.io/travis/bitpay/bitcore.svg?branch=master&style=flat-square)](https://travis-ci.org/bitpay/bitcore)
@@ -84,6 +86,4 @@ To verify signatures, use the following PGP keys:
 
 ## License
 
-Code released under [the MIT license](https://github.com/bitpay/bitcore/blob/master/LICENSE).
-
-Copyright 2013-2015 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.
+See `License` file.
