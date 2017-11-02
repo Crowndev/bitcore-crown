@@ -1,6 +1,9 @@
 {
   "name": "bitcore-crown",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "publishConfig": {
+    "tag": "next"
+  },
   "description": "A platform to build Crown and blockchain-based applications.",
   "author": "Crown Developers <info@crown.tech>",
   "main": "index.js",
@@ -86,10 +89,10 @@
     "request": "browser-request"
   },
   "dependencies": {
-    "bitcore-lib": "^0.13.14",
-    "bitcore-node": "~3.1.0",
-    "insight-api": "^0.4.0",
-    "insight-ui": "^0.4.0"
+    "bitcore-lib-crown": "0.0.0",
+    "bitcore-node-crown": "0.0.0",
+    "insight-api-crown": "0.0.0",
+    "insight-ui-crown": "0.0.0"
   },
   "license": "MIT",
   "devDependencies": {
