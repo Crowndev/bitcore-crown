@@ -46,9 +46,17 @@ ff 06 03 ea b4 16 01 01 ff ff ff ff 02 80 74 d2 1a 00 00 00 00 19 76 a9 14 ca cc
 The first part of the block is the block header, which is fixed to 80 bytes:
 
 ```
-02 01 14 00 e1 fd 13 4e 33 4f 2b fc 8e 50 60 05 0e 46 3e 20 46 9d cc 20 14 05 4d 7d 8c e7 77 21
-3c 8e 59 08 ea 11 e8 cc 38 ad db 62 d0 b4 9a a2 5f f5 9d af b8 81 5d 99 49 7e 79 f4 e2 a6 40 a2
-de 16 be e7 95 e9 84 59 6d ba 00 19 00 00 00 00
+02 01 14 00 // Version
+
+// Previous Block Hash
+e1 fd 13 4e 33 4f 2b fc 8e 50 60 05 0e 46 3e 20 46 9d cc 20 14 05 4d 7d 8c e7 77 21 3c 8e 59 08
+
+// Merkle Root
+ea 11 e8 cc 38 ad db 62 d0 b4 9a a2 5f f5 9d af b8 81 5d 99 49 7e 79 f4 e2 a6 40 a2 de 16 be e7
+
+95 e9 84 59 // Timestamp
+6d ba 00 19 // Bits
+00 00 00 00 // Nonce
 ```
 
 Then, AuxPow:
@@ -88,10 +96,31 @@ b9 ac 31 40 54 6a ae 51 c8 d0 bd a3 ff f0 af f2 0d e4 e5 a6 e9 84 59 35 47 01 18
 Finally, transactions:
 
 ```
-01 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-00 00 00 00 00 00 ff ff ff ff 06 03 ea b4 16 01 01 ff ff ff ff 02 80 74 d2 1a 00 00 00 00 19 76
-a9 14 ca cc 49 d5 7f e2 b9 8e 0e c6 1c d7 4a 5f 35 b5 49 61 b7 19 88 ac 80 74 d2 1a 00 00 00 00
-19 76 a9 14 18 bd e2 93 76 6e 90 5c 9f cb 24 47 99 af 94 b8 aa 8f fa a4 88 ac 00 00 00 00
+01 // Transaction Count
+
+01 00 00 00 // Version
+
+01 // TxIn Count
+
+// Previous Out
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ff ff ff ff
+
+06 // Script Size
+03 ea b4 16 01 01 // Script
+ff ff ff ff // Sequence Number
+
+02 // TxOut Count
+
+80 74 d2 1a 00 00 00 00 // Amount of First TxOut
+19 // Script Size (25 bytes)
+76 a9 14 ca cc 49 d5 7f e2 b9 8e 0e c6 1c d7 4a 5f 35 b5 49 61 b7 19 88 ac // Script
+
+80 74 d2 1a 00 00 00 00 // Amount of Second TxOut
+19 // Script Size (25 bytes)
+76 a9 14 18 bd e2 93 76 6e 90 5c 9f cb 24 47 99 af 94 b8 aa 8f fa a4 88 ac // Script
+
+00 00 00 00 // Lock Time
 ```
 
 Now let's go deep into the AuxPow part:
@@ -101,6 +130,7 @@ Parent Block Coinbase Transaction
 =================================
 
 01 00 00 00 // Version
+
 01 // TxIn Count
 
 // Previous Out
@@ -112,8 +142,8 @@ ff ff ff ff
 2f 45 42 31 2f 41 44 36 2f fa be 6d 6d 08 31 ff de fc 25 19 fd 13 7f 95 e9 88 22 b7 5d 3c da 9a
 d2 d0 b0 f1 32 67 6c a9 62 45 6a 76 cc 80 00 00 00 00 00 00 00 48 0f 69 4e 00 00 12 ea e4 40 00
 00
-
 ff ff ff ff // Sequence Number
+
 02 // TxOut Count
 
 42 74 e3 4c 00 00 00 00 // Amount of First TxOut
