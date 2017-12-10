@@ -41,7 +41,7 @@ FF 06 03 EA B4 16 01 01 FF FF FF FF 02 80 74 D2 1A 00 00 00 00 19 76 A9 14 CA CC
 6E 90 5C 9F CB 24 47 99 AF 94 B8 AA 8F FA A4 88 AC 00 00 00 00
 ```
 
-`B8 EB B3 DF` is the magic. Next to it is `6D 04 00 00`, which means the block size (1133 bytes).
+`B8 EB B3 DF` is the magic. Next to it is `6D 04 00 00`, which means the block size (1133 bytes). To be accurate, "block" refers to the following 1133 bytes.
 
 The first part of the block is the block header, which is fixed to 80 bytes:
 
@@ -163,8 +163,31 @@ AD 83 A7 85 70 80 DD AA C9 62 E1 56 E9 2E 3F 07 D4 88 BC 7F 06 CA 9C 07 0E C0 DA
 Parent Block Header
 ===================
 
-02 00 00 20 C5 A4 AA 7D 16 E3 D1 F0 80 A7 35 4C 91 94 00 96 6C BF 07 F3 96 99 43 01 00 00 00 00
-00 00 00 00 E5 63 B5 10 41 6B DC C1 DB 56 BB 9E 3C B9 AC 31 40 54 6A AE 51 C8 D0 BD A3 FF F0 AF
-F2 0D E4 E5 A6 E9 84 59 35 47 01 18 F2 C0 86 95
+02 00 00 20 // Version
+
+// Previous Block Hash
+C5 A4 AA 7D 16 E3 D1 F0 80 A7 35 4C 91 94 00 96 6C BF 07 F3 96 99 43 01 00 00 00 00 00 00 00 00
+
+// Merkle Root
+E5 63 B5 10 41 6B DC C1 DB 56 BB 9E 3C B9 AC 31 40 54 6A AE 51 C8 D0 BD A3 FF F0 AF F2 0D E4 E5
+
+A6 E9 84 59 // Timestamp
+35 47 01 18 // Bits
+F2 C0 86 95 // Nonce
+```
+
+The parent block is in the Crown blockchain, but isn't in the Bitcoin blockchain, because its hash is too big:
 
 ```
+D0 0E F0 BF 51 14 B6 25 84 B1 AC C5 DD E6 00 F6 54 14 68 68 24 06 6E 2D 00 00 00 00 00 00 00 00
+```
+
+The parent block's previous block, which is in the Bitcoin blockchain, has a hash of:
+
+```
+C5 A4 AA 7D 16 E3 D1 F0 80 A7 35 4C 91 94 00 96 6C BF 07 F3 96 99 43 01 00 00 00 00 00 00 00 00
+```
+
+Which is much smaller.
+
+If a parent block hash is small enough to meet Bitcoin difficulty, it will be included in both Crown and Bitcoin blockchains. If it only meets Crown difficulty, then it will be included only in the Crown blockchain.
