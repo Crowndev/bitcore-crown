@@ -218,4 +218,4 @@ The parent block's previous block, which is in the Bitcoin blockchain, has a muc
 c5 a4 aa 7d 16 e3 d1 f0 80 a7 35 4c 91 94 00 96 6c bf 07 f3 96 99 43 01 00 00 00 00 00 00 00 00
 ```
 
-For other blocks, if its parent block hash is small enough to meet Bitcoin difficulty, it will be included in both Crown and Bitcoin blockchains. But such case is very rare. In most cases it will only meet Crown difficulty, so it will be included only in the Crown blockchain.
+For other blocks, if its parent block hash is small enough to meet Bitcoin difficulty, this parent block will be included in both Crown and Bitcoin blockchains. But such case is very rare. In most cases it will only meet Crown difficulty, so it will be included only in the Crown blockchain.
