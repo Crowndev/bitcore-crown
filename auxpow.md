@@ -182,12 +182,10 @@ The parent block is in the Crown blockchain, but isn't in the Bitcoin blockchain
 D0 0E F0 BF 51 14 B6 25 84 B1 AC C5 DD E6 00 F6 54 14 68 68 24 06 6E 2D 00 00 00 00 00 00 00 00
 ```
 
-The parent block's previous block, which is in the Bitcoin blockchain, has a hash of:
+The parent block's previous block, which is in the Bitcoin blockchain, has a much smaller hash:
 
 ```
 C5 A4 AA 7D 16 E3 D1 F0 80 A7 35 4C 91 94 00 96 6C BF 07 F3 96 99 43 01 00 00 00 00 00 00 00 00
 ```
 
-Which is much smaller.
-
-If a parent block hash is small enough to meet Bitcoin difficulty, it will be included in both Crown and Bitcoin blockchains. If it only meets Crown difficulty, then it will be included only in the Crown blockchain.
+For other blocks, if its parent block hash is small enough to meet Bitcoin difficulty, it will be included in both Crown and Bitcoin blockchains. But such case is very rare. In most cases it will only meet Crown difficulty, so it will be included only in the Crown blockchain.
