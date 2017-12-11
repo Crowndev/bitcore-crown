@@ -41,7 +41,7 @@ ff 06 03 ea b4 16 01 01 ff ff ff ff 02 80 74 d2 1a 00 00 00 00 19 76 a9 14 ca cc
 6e 90 5c 9f cb 24 47 99 af 94 b8 aa 8f fa a4 88 ac 00 00 00 00
 ```
 
-`b8 eb b3 df` is the magic. Next to it is `6d 04 00 00`, which means the block size (1133 bytes). To be accurate, "block" refers to the following 1133 bytes.
+`b8 eb b3 df` is the magic. Next to it is `6d 04 00 00`, which means the block size (1133 bytes). To be accurate, "block" refers to 1133 bytes, not 1141 bytes.
 
 The first part of the block is the block header, which is fixed to 80 bytes:
 
@@ -206,7 +206,7 @@ a6 e9 84 59 // Timestamp
 f2 c0 86 95 // Nonce
 ```
 
-The parent block is in the Crown blockchain, but isn't in the Bitcoin blockchain, because its hash is too big:
+The parent block's essential data is in the Crown blockchain, but the parent block itself isn't in the Bitcoin blockchain, because its hash is too big:
 
 ```
 d0 0e f0 bf 51 14 b6 25 84 b1 ac c5 dd e6 00 f6 54 14 68 68 24 06 6e 2d 00 00 00 00 00 00 00 00
@@ -218,4 +218,8 @@ The parent block's previous block, which is in the Bitcoin blockchain, has a muc
 c5 a4 aa 7d 16 e3 d1 f0 80 a7 35 4c 91 94 00 96 6c bf 07 f3 96 99 43 01 00 00 00 00 00 00 00 00
 ```
 
-For other blocks, if its parent block hash is small enough to meet Bitcoin difficulty, this parent block will be included in both Crown and Bitcoin blockchains. But such case is very rare. In most cases it will only meet Crown difficulty, so it will be included only in the Crown blockchain.
+We can say that the parent block is an unsuccessful Bitcoin block.
+
+For other blocks, if its parent block hash is small enough to meet Bitcoin difficulty, this parent block will be included in the Bitcoin blockchain and can be called a successful Bitcoin block, but such case is very rare. In most cases it will only meet Crown difficulty.
+
+For the term "parent block", it means the related Bitcoin block, regardless of whether it's successful. Not to be confused with "previous block".
