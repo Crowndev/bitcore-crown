@@ -1,4 +1,7 @@
-For example, this is a real-world block in Crown LIVENET blockchain. It's generated at `2017-08-04T21:39:33Z`.
+Structure
+=========
+
+For example, this is a real-world AuxPow block in Crown LIVENET blockchain. It's generated at `2017-08-04T21:39:33Z`. All Crown blocks generated nowadays are AuxPow blocks.
 
 In the blockchain file, the whole data related to this block is as follows (1141 bytes):
 
@@ -223,3 +226,62 @@ We can say that the parent block is an unsuccessful Bitcoin block.
 For other blocks, if its parent block hash is small enough to meet Bitcoin difficulty, this parent block will be included in the Bitcoin blockchain and can be called a successful Bitcoin block, but such case is very rare. In most cases it will only meet Crown difficulty.
 
 For the term "parent block", it means the related Bitcoin block, regardless of whether it's successful. Not to be confused with "previous block".
+
+Verification
+============
+
+For this AuxPow block, the block hash is:
+
+```
+72 2b b8 df 4f 7c 61 59 e4 36 2d bf 8e b7 bd 9f 52 9a 27 5c 65 66 7d 05 8f a9 b7 29 de 75 be fe
+```
+
+The bitmask is 2 (binary number 0000010, meaning all are "right" except the second branch, which is "left"), so the corresponding merkle tree is:
+
+```
+      -
+     - 7
+    - 6
+   - 5
+  - 4
+ - 3
+2 -
+ - 1
+```
+
+The logic of the verification is shown below. You can type this in JS console:
+
+```js
+h = m => crypto.createHash("sha256").update(crypto.createHash("sha256").update(m).digest()).digest();
+
+blockHash = Buffer.from("722bb8df4f7c6159e4362dbf8eb7bd9f529a275c65667d058fa9b729de75befe","hex");
+hash1 = Buffer.from("0000000000000000000000000000000000000000000000000000000000000000","hex");
+hash2 = Buffer.from("e2f61c3f71d1defd3fa999dfa36953755c690689799962b48bebd836974e8cf9","hex");
+hash3 = Buffer.from("7d24db2bfa41474bfb2f877d688fac5faa5e10a2808cf9de307370b93352e548","hex");
+hash4 = Buffer.from("94857d3e08918f70395d9206410fbfa942f1a889aa5ab8188ec33c2f6e207dc7","hex");
+hash5 = Buffer.from("64686a5c6f7e08fe48fbacd1ca1bed9de96697be028813762c3d087e5088851c","hex");
+hash6 = Buffer.from("ad83a7857080ddaac962e156e92e3f07d488bc7f06ca9c070ec0daeb7370ee88","hex");
+hash7 = Buffer.from("87eb6ee8556beb7992db9e86ef06a2064f4c3ae194877d11f9c6e96b4938e93a","hex");
+
+hash = h(Buffer.concat([blockHash,hash1]));
+hash = h(Buffer.concat([hash2,hash]));
+hash = h(Buffer.concat([hash,hash3]));
+hash = h(Buffer.concat([hash,hash4]));
+hash = h(Buffer.concat([hash,hash5]));
+hash = h(Buffer.concat([hash,hash6]));
+hash = h(Buffer.concat([hash,hash7]));
+```
+
+`hash` (the computed merkle tree root hash) will be:
+
+```
+cc 76 6a 45 62 a9 6c 67 32 f1 b0 d0 d2 9a da 3c 5d b7 22 88 e9 95 7f 13 fd 19 25 fc de ff 31 08
+```
+
+The parent block coinbase transaction scriptSig is important, for it contains the merkle tree root hash (in reverse order) right after `"fa be 6d 6d"` for verification. You can see that it contains:
+
+```
+08 31 ff de fc 25 19 fd 13 7f 95 e9 88 22 b7 5d 3c da 9a d2 d0 b0 f1 32 67 6c a9 62 45 6a 76 cc
+```
+
+Because they matches, the verification is OK.
