@@ -227,8 +227,8 @@ For other blocks, if its parent block hash is small enough to meet Bitcoin diffi
 
 For the term "parent block", it means the related Bitcoin block, regardless of whether it's successful. Not to be confused with "previous block".
 
-Verification
-============
+Verification 1
+==============
 
 For this AuxPow block, the block hash is:
 
@@ -285,3 +285,81 @@ The parent block coinbase transaction scriptSig is important, for it contains th
 ```
 
 Because they matches, the verification is OK.
+
+Verification 2
+==============
+
+For the parent block coinbase transaction:
+
+```
+01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 ff ff ff ff 61 03 6c 4f 07 41 d6 61 3a 6a 1b ff 45 41 d6 61 3a 69 de dc e8 2f 42
+54 43 2e 54 4f 50 2f 4e 59 41 2f 45 42 31 2f 41 44 36 2f fa be 6d 6d 08 31 ff de fc 25 19 fd 13
+7f 95 e9 88 22 b7 5d 3c da 9a d2 d0 b0 f1 32 67 6c a9 62 45 6a 76 cc 80 00 00 00 00 00 00 00 48
+0f 69 4e 00 00 12 ea e4 40 00 00 ff ff ff ff 02 42 74 e3 4c 00 00 00 00 19 76 a9 14 ba 50 7b ae
+8f 16 43 d2 55 60 00 ca 26 b9 30 1b 90 69 dc 6b 88 ac 00 00 00 00 00 00 00 00 26 6a 24 aa 21 a9
+ed 81 cf b6 f5 08 ad 10 18 1f ff 55 4c 53 a1 2c 50 d9 f4 a3 91 d5 21 2d 55 ef 7a 5f 21 87 e2 25
+a0 00 00 00 00
+```
+
+Its hash is:
+
+```
+e8 af 7d a1 95 65 85 46 34 81 f9 df 2b 71 3c 4a d7 1e 4c 81 71 95 80 13 9f ee 96 85 87 7d 75 cd
+```
+
+The bitmask is 0 (binary number 00000000000, meaning all are "right"), so the corresponding merkle tree is:
+
+```
+           -
+          - 11
+         - 10
+        - 9
+       - 8
+      - 7
+     - 6
+    - 5
+   - 4
+  - 3
+ - 2
+- 1
+```
+
+The logic of the verification is shown below. You can type this in JS console:
+
+```js
+h = m => crypto.createHash("sha256").update(crypto.createHash("sha256").update(m).digest()).digest();
+
+coinbaseHash = Buffer.from("e8af7da1956585463481f9df2b713c4ad71e4c81719580139fee9685877d75cd","hex");
+hash1 = Buffer.from("bf39ddc4abd71fb92ac6665dc856690e6d3402177be92caa300019a52c769a91","hex");
+hash2 = Buffer.from("ea5641334a282dd0f9e81ad3a9f6a1f619f9f7df4f8788e31dd1f61d7a356b7c","hex");
+hash3 = Buffer.from("1b4bee02cdb8e8b6d4a91479e5c9d075c032d9420051199e98b9f70b6032a9d9","hex");
+hash4 = Buffer.from("1e5a832c05ceda821211d4ae8da69b2da936467fce04b24e2c03514929e82027","hex");
+hash5 = Buffer.from("79996b42234f5002cf33ccd3e68798a1bc567d9f0b25fc634d29378c9dfe928d","hex");
+hash6 = Buffer.from("44b5a9181a2c46bcacd4a7db818becee1c490f92d88f3e1f2a762ee8ba855792","hex");
+hash7 = Buffer.from("116ce917c22f06f70015ef3b01e46622ca1023b88343735325264b3d781de322","hex");
+hash8 = Buffer.from("cd40bb257e4d6c18111b1be68b44346bc34bf20a6394bc0575b6de5e69d9a67b","hex");
+hash9 = Buffer.from("08e8700c248c7b20c4271e3cbd04a1c8e44743adbdd127bbd833406d3b3c78f0","hex");
+hash10 = Buffer.from("c8c2c276884d9b1b202d7cf704fc673f05995a5fc4ab1dc6fc7d5d102e818c9b","hex");
+hash11 = Buffer.from("656dc7561953d20d978f1e6d38d23aef6e147d0eb47881137bca5c6ee6ee7a6c","hex");
+
+hash = h(Buffer.concat([coinbaseHash,hash1]));
+hash = h(Buffer.concat([hash,hash2]));
+hash = h(Buffer.concat([hash,hash3]));
+hash = h(Buffer.concat([hash,hash4]));
+hash = h(Buffer.concat([hash,hash5]));
+hash = h(Buffer.concat([hash,hash6]));
+hash = h(Buffer.concat([hash,hash7]));
+hash = h(Buffer.concat([hash,hash8]));
+hash = h(Buffer.concat([hash,hash9]));
+hash = h(Buffer.concat([hash,hash10]));
+hash = h(Buffer.concat([hash,hash11]));
+```
+
+`hash` (the computed merkle tree root hash) will be:
+
+```
+e5 63 b5 10 41 6b dc c1 db 56 bb 9e 3c b9 ac 31 40 54 6a ae 51 c8 d0 bd a3 ff f0 af f2 0d e4 e5
+```
+
+This is identical to the merkle root stored in parent block header, so the verification is OK.
