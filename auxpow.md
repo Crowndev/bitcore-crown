@@ -284,7 +284,7 @@ The parent block coinbase transaction scriptSig is important, for it contains th
 08 31 ff de fc 25 19 fd 13 7f 95 e9 88 22 b7 5d 3c da 9a d2 d0 b0 f1 32 67 6c a9 62 45 6a 76 cc
 ```
 
-Because they matches, the verification is OK.
+Because they match, the verification is OK.
 
 Verification 2
 ==============
