@@ -89,10 +89,10 @@
     "request": "browser-request"
   },
   "dependencies": {
-    "bitcore-lib-crown": "0.0.0",
-    "bitcore-node-crown": "0.0.0",
-    "insight-api-crown": "0.0.0",
-    "insight-ui-crown": "0.0.0"
+    "bitcore-lib-crown": "0.2.0",
+    "bitcore-node-crown": "0.1.0",
+    "insight-api-crown": "0.1.0",
+    "insight-ui-crown": "0.1.0"
   },
   "license": "MIT",
   "devDependencies": {
