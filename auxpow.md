@@ -126,6 +126,8 @@ ff ff ff ff // Sequence Number
 00 00 00 00 // Lock Time
 ```
 
+Note that AuxPow doesn't belong to the block header, nor does it contribute to the calculation of the block hash. The block hash is always calculated from the starting 80 bytes.
+
 Now let's go deep into the AuxPow part:
 
 ```
@@ -236,7 +238,7 @@ For this AuxPow block, the block hash is:
 72 2b b8 df 4f 7c 61 59 e4 36 2d bf 8e b7 bd 9f 52 9a 27 5c 65 66 7d 05 8f a9 b7 29 de 75 be fe
 ```
 
-The bitmask is 2 (binary number 0000010, meaning all are "right" except the second branch, which is "left"), so the corresponding merkle tree is:
+The bitmask for this aux blockchain merkle branch is 2 (binary number 0000010, meaning all are "right" except the second branch, which is "left"), so the corresponding merkle tree is:
 
 ```
       -
@@ -308,7 +310,7 @@ Its hash is:
 e8 af 7d a1 95 65 85 46 34 81 f9 df 2b 71 3c 4a d7 1e 4c 81 71 95 80 13 9f ee 96 85 87 7d 75 cd
 ```
 
-The bitmask is 0 (binary number 00000000000, meaning all are "right"), so the corresponding merkle tree is:
+The bitmask for this coinbase transaction merkle branch is 0 (binary number 00000000000, meaning all are "right"), so the corresponding merkle tree is:
 
 ```
            -
@@ -363,3 +365,8 @@ e5 63 b5 10 41 6b dc c1 db 56 bb 9e 3c b9 ac 31 40 54 6a ae 51 c8 d0 bd a3 ff f0
 ```
 
 This is identical to the merkle root stored in parent block header, so the verification is OK.
+
+Other Verifications
+===================
+
+Apart from these 2, there are other verifications that must be passed. Details can be found in Core's auxpow.cpp and bitcore-lib-crown's auxpow.js.
