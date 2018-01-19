@@ -5,5 +5,3 @@ Desktop.ini
 *.swp
 *.log
 /node_modules
-
-/coverage
