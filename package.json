@@ -8,12 +8,11 @@
   "author": "Crown Developers <info@crown.tech>",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/** --recursive",
-    "build-deb": "./scripts/build-deb"
+    "test": "./node_modules/.bin/mocha test/** --recursive"
   },
   "bin": {
-    "bitcore": "./bin/bitcore",
-    "bitcored": "./bin/bitcored"
+    "bitcore-crown": "./bin/bitcore",
+    "bitcored-crown": "./bin/bitcored"
   },
   "contributors": [
     {
