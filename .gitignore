@@ -1,20 +1,9 @@
-*.swp
-coverage
-node_modules
-browser/tests.js
-docs/api
-
-CONTRIBUTING.html
-LICENSE.html
-README.html
-examples.html
-npm-debug.log
-
-apiref
-bower_components
-report
 .DS_Store
+Thumbs.db
+Desktop.ini
+*~
+*.swp
+*.log
+/node_modules
 
-build
-
-tests.js
+/coverage
