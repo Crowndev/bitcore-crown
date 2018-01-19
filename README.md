@@ -6,7 +6,7 @@ bitcore-crown
 Installation
 ============
 
-It should finally download Crown Core binaries from the web. But for now it just copies a local file. Make sure there's a file `~/zzz-crown-binaries/crownd` before `npm install`.
+It should finally download Crown Core binaries from the web. But for now it just copies a local file. Make sure there's a file `~/zzz-crown-binaries/crownd`.
 
 Install [nvm](https://github.com/creationix/nvm).
 
@@ -15,8 +15,10 @@ Use `nvm` command to install Node.js v4 and the latest npm.
 Then type:
 
 ```bash
-npm install -g bitcore-crown
+npm install -g bitcore-crown@next
 ```
+
+Note: Do not use `sudo` to run the above command. To get rid of `sudo`, we must use `nvm` to install `node` and `npm` beforehand.
 
 Usage
 =====
