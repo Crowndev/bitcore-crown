@@ -1,6 +1,6 @@
 {
   "name": "bitcore-crown",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "publishConfig": {
     "tag": "next"
   },
@@ -11,7 +11,7 @@
     "test": "./node_modules/.bin/mocha test/** --recursive"
   },
   "bin": {
-    "bitcore-crown": "./bin/bitcore",
+    "bitcore-crown-adv": "./bin/bitcore",
     "bitcored-crown": "./bin/bitcored"
   },
   "contributors": [
