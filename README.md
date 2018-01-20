@@ -1,10 +1,12 @@
 bitcore-crown
 =============
 
-# This package is under development. Please don't install.
+This package is under development. It may be unstable, or not work as expected.
 
 Prerequisites
 =============
+
+You need to have ZeroMQ and tools, nvm, Node.js, npm, and Crown Core on your computer.
 
 ZeroMQ and Tools
 ----------------
@@ -19,8 +21,8 @@ For Mac OS X:
 
 Install `zeromq` via Brew.
 
-Node.js and npm
----------------
+nvm, Node.js and npm
+--------------------
 
 Install [nvm](https://github.com/creationix/nvm).
 
