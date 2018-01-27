@@ -6,6 +6,8 @@ This package is under development. It may be unstable, or not work as expected.
 Prerequisites
 =============
 
+Currently, it has only been tested on Ubuntu 14.04.
+
 You need to have ZeroMQ and tools, nvm, Node.js, npm, and Crown Core on your computer.
 
 ZeroMQ and Tools
