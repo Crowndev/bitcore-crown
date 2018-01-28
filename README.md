@@ -8,7 +8,7 @@ Prerequisites
 
 Currently, it has only been tested on Ubuntu 14.04.
 
-You need to have ZeroMQ and tools, nvm, Node.js, npm, and Crown Core on your computer.
+You need to have ZeroMQ and tools, nvm, Node.js and npm on your computer.
 
 ZeroMQ and Tools
 ----------------
@@ -29,11 +29,6 @@ nvm, Node.js and npm
 Install [nvm](https://github.com/creationix/nvm).
 
 Use `nvm` command to install Node.js v4 and the latest npm.
-
-Crown Core
-----------
-
-It should finally download Crown Core binaries from the web. But for now it just copies a local file. So make sure there's a file `~/zzz-crown-binaries/crownd`. We must use a Bitcore-specific `crownd` by cloning the repo "https://github.com/zhanzhenzhen/crowncoin" then build it.
 
 Installation
 ============
