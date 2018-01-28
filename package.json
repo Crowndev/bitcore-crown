@@ -1,6 +1,6 @@
 {
   "name": "bitcore-crown",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "publishConfig": {
     "tag": "next"
   },
@@ -88,9 +88,9 @@
     "request": "browser-request"
   },
   "dependencies": {
-    "bitcore-lib-crown": "0.2.0",
-    "bitcore-node-crown": "0.1.0",
-    "insight-api-crown": "0.1.1",
+    "bitcore-lib-crown": "0.2.1",
+    "bitcore-node-crown": "0.1.1",
+    "insight-api-crown": "0.1.2",
     "insight-ui-crown": "0.2.0"
   },
   "license": "MIT",
