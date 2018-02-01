@@ -49,6 +49,10 @@ bitcored-crown
 
 It will start a Crown node and Insight service. The blockchain data will be downloaded to `~/.bitcore-crown`. Insight can be visited via "http://localhost:3001/insight/".
 
+Don't modify `~/.bitcore-crown/bitcore-node-crown.json`. Unlike the original Bitcore, modifying this file will have no effect. This is to avoid conflicts between the testing environment and production environment. In the future this may be changed.
+
+If you think the data is broken, the last way is to delete `~/.bitcore-crown` and start the program to redownload the data.
+
 There's another command `bitcore-crown-adv` for advanced operations. This maps to the `bitcore` command in the original Bitcore. The original Bitcore manual is [here](https://bitcore.io/). We added the `-adv` suffix to avoid confusion with `bitcored-crown`.
 
 Contributing

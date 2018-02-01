@@ -3,6 +3,14 @@
 'use strict';
 
 var path = require('path');
+var fs = require('fs');
+var os = require('os');
+try {
+  fs.unlinkSync(path.join(os.homedir(), '.bitcore-crown/bitcore-node-crown.json'));
+}
+catch (ex) {
+}
+
 var bitcored = require('bitcore-node-crown/lib/cli/bitcored');
 var servicesPath = path.resolve(__dirname, '../');
 var additionalServices = ['insight-api-crown', 'insight-ui-crown'];
