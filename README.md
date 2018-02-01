@@ -14,10 +14,11 @@ ZeroMQ and Tools
 ----------------
 
 ```bash
+sudo apt-get update
 sudo apt-get install libzmq3-dev build-essential
 ```
 
-Also make sure Python 2.x is installed.
+Also make sure the commands `python` and `curl` are installed.
 
 nvm, Node.js and npm
 --------------------
