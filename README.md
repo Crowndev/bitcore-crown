@@ -6,29 +6,30 @@ This package is under development. It may be unstable, or not work as expected.
 Prerequisites
 =============
 
-Currently, it has only been tested on Ubuntu 14.04.
+Currently, it can be only run on Ubuntu.
 
-You need to have ZeroMQ and tools, nvm, Node.js and npm on your computer.
+You need to have ZeroMQ and tools, nvm, Node.js and npm installed.
 
 ZeroMQ and Tools
 ----------------
-
-For GNU/Linux distribution such as Debian or Ubuntu:
 
 ```bash
 sudo apt-get install libzmq3-dev build-essential
 ```
 
-For Mac OS X:
-
-Install `zeromq` via Brew.
+Also make sure Python 2.x is installed.
 
 nvm, Node.js and npm
 --------------------
 
 Install [nvm](https://github.com/creationix/nvm).
 
-Use `nvm` command to install Node.js v4 and the latest npm.
+Use `nvm` command to install Node.js v4 and the latest npm:
+
+```bash
+nvm install 4
+nvm install-latest-npm
+```
 
 Installation
 ============
