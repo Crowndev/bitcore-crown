@@ -50,7 +50,7 @@ bitcored-crown
 
 It will start a Crown node and Insight service. The blockchain data will be downloaded to `~/.bitcore-crown`. Insight can be visited via "http://localhost:3001/insight/".
 
-Don't modify `~/.bitcore-crown/bitcore-node-crown.json`. Unlike the original Bitcore, modifying this file will have no effect. This is to avoid conflicts between the testing environment and production environment. In the future this may be changed.
+Configurations can be changed in `~/.bitcore-crown/bitcore-node-crown.json`. But don't modify the `servicesConfig.bitcoind.spawn.exec` property. Unlike the original Bitcore, modifying the binary file path will have no effect, as it will be automatically adjusted on every start if needed. This is by design to avoid conflicts between the testing environment and production environment. In the future this may be changed.
 
 If you think the data is broken, the last way is to delete `~/.bitcore-crown` and start the program to redownload the data.
 

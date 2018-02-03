@@ -6,7 +6,13 @@ var path = require('path');
 var fs = require('fs');
 var os = require('os');
 try {
-  fs.unlinkSync(path.join(os.homedir(), '.bitcore-crown/bitcore-node-crown.json'));
+  var configFile = path.join(os.homedir(), '.bitcore-crown/bitcore-node-crown.json');
+  var config = JSON.parse(fs.readFileSync(configFile, 'utf8'));
+  if (config.services.indexOf('bitcoind') !== -1) {
+    var execFile = path.join(path.dirname(require.resolve('bitcore-node-crown')), 'bin/bitcoind');
+    config.servicesConfig.bitcoind.spawn.exec = execFile;
+    fs.writeFileSync(configFile, JSON.stringify(config, null, 2));
+  }
 }
 catch (ex) {
 }
