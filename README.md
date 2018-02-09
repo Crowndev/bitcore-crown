@@ -36,7 +36,7 @@ Installation
 ============
 
 ```bash
-npm install bitcore-crown -g --global-style
+npm install bitcore-crown -g --legacy-bundling
 ```
 
 Note: Do not use `sudo`. To get rid of `sudo`, Node.js and npm must be installed via `nvm`.

@@ -1,6 +1,6 @@
 {
   "name": "bitcore-crown",
-  "version": "0.2.12",
+  "version": "0.2.14",
   "publishConfig": {
     "tag": "next"
   },
