@@ -91,7 +91,7 @@
     "bitcore-lib-crown": "0.2.1",
     "bitcore-node-crown": "0.1.2",
     "insight-api-crown": "0.1.5",
-    "insight-ui-crown": "0.2.3"
+    "insight-ui-crown": "0.2.4"
   },
   "license": "MIT",
   "devDependencies": {

@@ -3,6 +3,12 @@ What's Different
 
 This repo, bitcore-crown, is based on the `9a4cdbdb5a7ae7b245072281177a94b847ee6bf1` commit of the official bitcore. The modified area is similar to [this link](https://github.com/bitpay/bitcore/compare/9a4cdbdb5a7ae7b245072281177a94b847ee6bf1...dashevo:3be354b5bda192f9756102d5bf8607a170912800).
 
+While running `npm install`, make sure to specify `--legacy-bundling`:
+
+```bash
+npm install --legacy-bundling
+```
+
 The following is the original contributing guide of bitcore.
 
 Contributing to Bitcore
