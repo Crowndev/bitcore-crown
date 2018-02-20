@@ -17,6 +17,9 @@ try {
 catch (ex) {
 }
 
+if (process.argv[2] === '--version') {
+  require('bitcore-node-crown/lib').version = require('../package.json').version;
+}
 var bitcored = require('bitcore-node-crown/lib/cli/bitcored');
 var servicesPath = path.resolve(__dirname, '../');
 var additionalServices = ['insight-api-crown', 'insight-ui-crown'];
