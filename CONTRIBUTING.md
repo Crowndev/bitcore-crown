@@ -9,6 +9,18 @@ While running `npm install`, make sure to specify `--legacy-bundling`:
 npm install --legacy-bundling
 ```
 
+For AuxPow details, see "auxpow.md".
+
+In "package.json", there is:
+
+```
+"publishConfig": {
+  "tag": "next"
+}
+```
+
+It means the default publish tag (npm tag, not Git tag) is "next" rather than "latest". This reduces the risk that users install unstable versions. If a version is considered as stable, then we will manually add it to "latest".
+
 The following is the original contributing guide of bitcore.
 
 Contributing to Bitcore
