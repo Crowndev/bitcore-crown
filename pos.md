@@ -58,7 +58,8 @@ Then, transactions:
 01 // TxIn Count
 
 // Previous Out
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ff ff ff ff
 
 05 // Script Size
 03 19 a1 23 00 // Script
@@ -88,7 +89,8 @@ ff ff ff ff // Sequence Number
 01 // TxIn Count
 
 // Previous Out
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ff ff ff ff
 
 06 // Script Size
 c0 03 19 a1 23 00 // Script
