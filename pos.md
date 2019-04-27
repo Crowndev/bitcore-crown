@@ -108,12 +108,30 @@ ff ff ff ff // Sequence Number
 Finally, block signature and stake pointer:
 
 ```
-47 30 45 02 21 00 ba e0 98 5e 39 96 0c f4 bf 66 fe 0e 50 24 40 06 a4 27 c8 91 07 e4 17 27 d1 0d
-7f 13 83 57 9a be 02 20 21 a6 b3 1a 1e 57 6f 4c a2 4d c3 a1 39 b8 5d 17 0c 24 17 25 91 e5 39 18
-db e9 fa 3d d7 27 ae eb 28 c1 eb 24 0e 12 66 75 d5 04 17 62 d2 f7 66 6e f5 40 15 22 73 54 09 fe
-e2 ef e6 f9 c7 a6 ea 2f
+47 // Size
+30 45 02 21 00 ba e0 98 5e 39 96 0c f4 bf 66 fe 0e 50 24 40 06 a4 27 c8 91 07 e4 17 27 d1 0d 7f
+13 83 57 9a be 02 20 21 a6 b3 1a 1e 57 6f 4c a2 4d c3 a1 39 b8 5d 17 0c 24 17 25 91 e5 39 18 db
+e9 fa 3d d7 27 ae eb
 
+// Stake Pointer Block Hash
+28 c1 eb 24 0e 12 66 75 d5 04 17 62 d2 f7 66 6e f5 40 15 22 73 54 09 fe e2 ef e6 f9 c7 a6 ea 2f
+
+// Stake Pointer Transaction Hash
 13 54 9c 86 5f 6d e9 72 00 92 20 99 39 65 ad 1e e2 ca c5 f7 7a a7 13 f6 0d 9f 5e b7 1b df 81 9d
 
-01 00 00 00 41 04 2a 13 16 12 46 8d 7f 62 5a 4c 90 1a 0b 5c 55 0d 0b 46 d5 5f 2c ac d8 85 2f 6a 64 0d c7 9d 85 3c 58 b3 c2 c8 88 c5 93 8e 0e 77 f4 ac 15 4d f1 1b 81 eb e4 e7 c3 94 d2 eb 00 9f 16 f3 88 8c 38 bd 21 03 35 8a 22 8e 7f b7 cd fd 4a 8d 65 ab ea 32 32 94 85 85 fd 7f f6 8a 08 cf 43 50 82 67 d5 81 f4 79 47 30 45 02 21 00 a2 6a 59 da 4b eb 76 5f c6 90 fb ab e9 9d 20 26 75 1d d3 d0 03 ed 89 b1 a8 01 e7 c3 ae c0 1a f8 02 20 35 8e e9 c6 90 71 6c 4c 87 8d 1f 36 cd b4 32 f0 df 37 26 0b 36 31 89 24 8c 3a 02 be 7b 95 7b 39
+01 00 00 00
+
+41 // Size (65 bytes)
+04 2a 13 16 12 46 8d 7f 62 5a 4c 90 1a 0b 5c 55 0d 0b 46 d5 5f 2c ac d8 85 2f 6a 64 0d c7 9d 85
+3c 58 b3 c2 c8 88 c5 93 8e 0e 77 f4 ac 15 4d f1 1b 81 eb e4 e7 c3 94 d2 eb 00 9f 16 f3 88 8c 38
+bd
+
+21 // Size (33 bytes)
+03 35 8a 22 8e 7f b7 cd fd 4a 8d 65 ab ea 32 32 94 85 85 fd 7f f6 8a 08 cf 43 50 82 67 d5 81 f4
+79
+
+47 // Size (71 bytes)
+30 45 02 21 00 a2 6a 59 da 4b eb 76 5f c6 90 fb ab e9 9d 20 26 75 1d d3 d0 03 ed 89 b1 a8 01 e7
+c3 ae c0 1a f8 02 20 35 8e e9 c6 90 71 6c 4c 87 8d 1f 36 cd b4 32 f0 df 37 26 0b 36 31 89 24 8c
+3a 02 be 7b 95 7b 39
 ```
