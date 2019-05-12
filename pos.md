@@ -1,7 +1,7 @@
 Structure
 =========
 
-For example, this is a real-world PoS block in Crown LIVENET blockchain. It's generated at `2019-04-17T11:02:09Z`. All Crown blocks generated nowadays are PoS blocks.
+For example, this is a real-world PoS block in Crown LIVENET blockchain. It's generated at `2019-04-17T11:02:09Z`. Its height is 2335001. All Crown blocks generated nowadays are PoS blocks.
 
 In the blockchain file, the whole data related to this block is as follows (625 bytes):
 

@@ -9,7 +9,7 @@ While running `npm install`, make sure to specify `--legacy-bundling`:
 npm install --legacy-bundling
 ```
 
-For AuxPow details, see "auxpow.md".
+For AuxPow details, see "auxpow.md". For PoS details, see "pos.md".
 
 In "package.json", there is:
 

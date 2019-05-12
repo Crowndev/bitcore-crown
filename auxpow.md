@@ -1,7 +1,7 @@
 Structure
 =========
 
-For example, this is a real-world AuxPow block in Crown LIVENET blockchain. It's generated at `2017-08-04T21:39:33Z`. All Crown blocks generated nowadays are AuxPow blocks.
+For example, this is a real-world AuxPow block in Crown LIVENET blockchain. It's generated at `2017-08-04T21:39:33Z`. AuxPow is superseded by PoS in newly-generated blocks.
 
 In the blockchain file, the whole data related to this block is as follows (1141 bytes):
 
