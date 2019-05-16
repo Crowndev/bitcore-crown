@@ -3,12 +3,14 @@ bitcore-crown
 
 This package is under development. It may be unstable, or not work as expected.
 
+All commands in this document must be executed as a standard user. Do not execute them as root.
+
 Prerequisites
 =============
 
-Currently, it can be only run on Ubuntu.
+Make sure you're on Ubuntu 16.04.
 
-You need to have ZeroMQ and tools, nvm, Node.js and npm installed.
+Basically, you need to have ZeroMQ and tools, nvm, Node.js and npm on your server. Here's how to install them:
 
 ZeroMQ and Tools
 ----------------
@@ -23,7 +25,7 @@ Also make sure the commands `python` and `curl` are installed.
 nvm, Node.js and npm
 --------------------
 
-Install [nvm](https://github.com/creationix/nvm).
+Install nvm. [Click here](https://github.com/creationix/nvm) to learn how to install nvm.
 
 Use `nvm` command to install Node.js v4 and the latest npm:
 
